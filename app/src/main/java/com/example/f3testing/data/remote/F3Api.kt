@@ -1,6 +1,8 @@
 package com.example.f3testing.data.remote
 
+import com.example.f3testing.domain.model.BannerResponseModel
 import com.example.f3testing.domain.model.ServicesResponseModel
+import com.example.f3testing.domain.model.VillaListResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 
@@ -16,6 +18,20 @@ interface F3Api {
 
 
 
+    @GET("Banner/GetAll")
+    suspend fun getBanners(
+        @Header("Authorization") authorization: String,
+        @Header("Accept-Language") acceptLanguage: String ,
+        @Header("VillaId") villaId: String
+    ): BannerResponseModel
+
+
+    @GET("Services/GetUserVillas")
+    suspend fun getVillaList(
+        @Header("Authorization") authorization: String,
+        @Header("Accept-Language") acceptLanguage: String ,
+        @Header("VillaId") villaId: String
+    ) : VillaListResponse
 
 
     companion object

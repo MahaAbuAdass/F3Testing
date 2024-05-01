@@ -31,4 +31,5 @@ object AppModule {
     fun getAllServices(f3Api: F3Api): F3Repository {
         return F3RepositoryImpl(getAllServicesApi = f3Api)
     }
+
 }
