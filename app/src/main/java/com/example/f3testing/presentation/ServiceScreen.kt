@@ -137,7 +137,6 @@ fun BannerCard(bannerItem: BannerDateModel) {
                 data = bannerItem.image,
                 builder = {
                     // You can apply transformations if needed
-                    placeholder(R.drawable.ic_launcher_background) // Placeholder while loading
                 }
             ),
             contentDescription = "Banner Image",
@@ -181,7 +180,7 @@ fun ServiceCard(serviceItem: ServicesDataModel) {
                         data = imageUrl,
                         builder = {
                             // You can apply transformations if needed
-                            placeholder(R.drawable.ic_launcher_background) // Placeholder while loading
+//                            placeholder(R.drawable.ic_launcher_background) // Placeholder while loading
                         }
                     ),
                     contentDescription = stringResource(id = coil.compose.base.R.string.close_drawer),
@@ -205,4 +204,7 @@ fun ServiceCard(serviceItem: ServicesDataModel) {
         }
     }
 }
+
+
+
 
