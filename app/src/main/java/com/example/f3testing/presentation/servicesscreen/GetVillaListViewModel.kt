@@ -19,7 +19,7 @@ class GetVillaListViewModel @Inject constructor(private var villaListRepository 
     var authorization =
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ0ZXN0OTBAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiYjQ0NjQwODYtN2IwNy00MjU1LTg4NjEtODE4NjVkZWE2YzAzIiwiZXhwIjoxNzQ2MDgzMjcxLCJpc3MiOiJOZXdBZW9uIiwiYXVkIjoiTmV3QWVvbiJ9.DQzDgTwGwKoz3ed56LxTu17WbMcatcL36n6U6Nkb1qQ"
     var acceptLanguage = "2"
-    var villaId = "40"
+    var villaId = "8"
 
     var villaListData by mutableStateOf<List<VillaDetails>?>(emptyList())
 

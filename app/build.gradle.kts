@@ -76,6 +76,8 @@ dependencies {
 
     // Compose navigation
     implementation ("androidx.navigation:navigation-compose:2.5.3")
+    implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+
 
     //Dagger - Hilt
     implementation ("com.google.dagger:hilt-android:2.44.2")
@@ -102,4 +104,10 @@ dependencies {
 
     implementation ("io.reactivex.rxjava3:rxjava:3.1.7")
 
+
+    implementation("androidx.compose.material3:material3")
+   // implementation ("com.google.accompanist:accompanist-drawer:0.21.0")
+      //  implementation("androidx.drawerlayout:drawerlayout:1.2.0")
+
 }
+

@@ -3,6 +3,7 @@ package com.example.f3testing.data.remote.repository
 import android.util.Log
 import com.example.f3testing.data.remote.F3Api
 import com.example.f3testing.domain.model.BannerDateModel
+import com.example.f3testing.domain.model.ProfileResponseModel
 import com.example.f3testing.domain.model.ServicesDataModel
 import com.example.f3testing.domain.model.VillaDetails
 import com.example.f3testing.domain.repository.F3Repository
@@ -53,6 +54,20 @@ class F3RepositoryImpl (private val getAllServicesApi: F3Api
             Resource.Success(villaList.data)
         }
         catch (e:Exception){
+            Resource.Error(e.message)
+        }
+    }
+
+    override suspend fun getUserProfile(
+        authorization: String,
+        acceptLanguage: String,
+        villaId: String
+    ): Resource<ProfileResponseModel> {
+        return try {
+            val userData = getAllServicesApi.getUserProfileData(authorization = authorization, acceptLanguage =acceptLanguage, villaId = villaId)
+            Resource.Success(userData)
+        }
+        catch ( e:Exception){
             Resource.Error(e.message)
         }
     }
