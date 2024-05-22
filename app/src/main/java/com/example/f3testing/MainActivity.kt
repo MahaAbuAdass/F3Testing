@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.f3testing.presentation.AccessCard
 import com.example.f3testing.presentation.Account
 import com.example.f3testing.presentation.ServiceScreen
 import com.example.f3testing.presentation.theme.F3TestingTheme
@@ -40,6 +41,10 @@ class MainActivity : ComponentActivity() {
 
                     composable(Screen.Account.route){
                         Account(navController)
+                    }
+
+                    composable(Screen.AcessCard.route){
+                        AccessCard()
                     }
                 }
             }

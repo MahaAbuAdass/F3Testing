@@ -65,7 +65,7 @@ class F3RepositoryImpl (private val getAllServicesApi: F3Api
     ): Resource<ProfileResponseModel> {
         return try {
             val userData = getAllServicesApi.getUserProfileData(authorization = authorization, acceptLanguage =acceptLanguage, villaId = villaId)
-            Resource.Success(userData)
+            Resource.Success(userData.data)
         }
         catch ( e:Exception){
             Resource.Error(e.message)

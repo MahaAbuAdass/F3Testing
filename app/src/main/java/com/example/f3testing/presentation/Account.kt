@@ -2,6 +2,7 @@ package com.example.f3testing.presentation
 
 import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -71,7 +72,12 @@ fun Account(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Menu",
                             tint = colorResource(id = R.color.yellow_new),  // Adjust tint as needed
-                            modifier = Modifier.padding(end = 8.dp) // Add padding between icon and title
+                            modifier = Modifier
+                                .padding(end = 8.dp) // Add padding between icon and title
+                                .clickable {
+                                    navController.popBackStack()
+                                }
+
                         )
                         // Title
                         Text(
@@ -81,13 +87,13 @@ fun Account(
                                 start = 8.dp,
                                 end = 8.dp
                             ) ,
-                            style = TextStyle(fontWeight = FontWeight.Bold)// Add padding to the title
+                            style = TextStyle(fontWeight = FontWeight.Bold , fontSize = 18.sp)// Add padding to the title
                         )
                         // Icon at the end
                         Text(
                             text = "Edit",
                             color = colorResource(id = R.color.yellow_new),
-                            style = TextStyle(fontSize = 16.sp)
+                            style = TextStyle(fontWeight = FontWeight.Bold , fontSize = 18.sp)
                         )
                     }
                 },
@@ -106,7 +112,7 @@ fun Account(
                         painter = painterResource(id = R.drawable.ic_profile),
                         contentDescription = "",
                     )
-                    userData.name?.let { Text( modifier = Modifier.padding(start = 10.dp),text = it , style = TextStyle(color = Color.LightGray)) }
+                    userData?.name?.let { Text( modifier = Modifier.padding(start = 10.dp),text = it , style = TextStyle(color = Color.LightGray , fontSize = 15.sp)) }
                 }
 
                 Divider(color = Color.LightGray)
@@ -122,7 +128,7 @@ fun Account(
                         painter = painterResource(id = R.drawable.ic_telephone),
                         contentDescription = "",
                     )
-                    Text(modifier = Modifier.padding(start = 10.dp), text = "000000000000" , style = TextStyle(color = Color.LightGray))
+                    Text(modifier = Modifier.padding(start = 10.dp), text = "000000000000" , style = TextStyle(color = Color.LightGray , fontSize = 15.sp))
                 }
                 Divider(color = Color.LightGray)
 
@@ -138,7 +144,7 @@ fun Account(
                         painter = painterResource(id = R.drawable.ic_telephone),
                         contentDescription = "",
                     )
-                    userData.email?.let { Text(text = it , style = TextStyle(color = Color.LightGray)) }
+                    userData?.email?.let { Text( modifier = Modifier.padding(start = 10.dp) , text = it , style = TextStyle(color = Color.LightGray , fontSize = 15.sp)) }
                 }
                 Divider(color = Color.LightGray)
 
@@ -153,7 +159,7 @@ fun Account(
                         painter = painterResource(id = R.drawable.ic_telephone),
                         contentDescription = "",
                     )
-                    Text(modifier = Modifier.padding(start = 10.dp),text = "enter your current password" , style = TextStyle(color = Color.LightGray))
+                    Text(modifier = Modifier.padding(start = 10.dp),text = "enter your current password" , style = TextStyle(color = Color.LightGray , fontSize = 15.sp))
                 }
                 Divider(color = Color.LightGray)
 
@@ -170,7 +176,7 @@ fun Account(
                     )
                     Text(modifier = Modifier.padding(start = 10.dp),
                         text = "enter your new password"
-                        , style = TextStyle(color = Color.LightGray))
+                        , style = TextStyle(color = Color.LightGray , fontSize = 15.sp))
                 }
                 Divider(color = Color.LightGray)
 
@@ -204,7 +210,7 @@ fun Account(
 //                        )
                     Text(modifier = Modifier.padding(start = 10.dp),
                         text = "re-enter your new password"
-                        , style = TextStyle(color = Color.LightGray))
+                        , style = TextStyle(color = Color.LightGray, fontSize = 15.sp))
                 }
                 Divider(color = Color.LightGray)
 

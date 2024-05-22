@@ -84,6 +84,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.imageResource
 import androidx.navigation.NavHostController
 import com.example.f3testing.Screen
+import com.example.f3testing.enums.ServiceEnum
 
 val SELECTED_VILLA_KEY = "selected_villa"
 
@@ -289,7 +290,10 @@ fun ServiceScreen(
                     ) {
                         rowItems.forEach { serviceItem ->
                             if (serviceItem != null) {
-                                ServiceCard(serviceItem = serviceItem)
+                                ServiceCard(serviceItem = serviceItem , onItemClick = {} , navController)
+
+
+
                             }
                         }
                     }
@@ -348,7 +352,8 @@ fun BannerCard(bannerItem: BannerDateModel) {
 }
 
 @Composable
-fun ServiceCard(serviceItem: ServicesDataModel) {
+fun ServiceCard(serviceItem: ServicesDataModel , onItemClick: (ServicesDataModel) -> Unit ,navController: NavHostController
+) {
 
     Box(
         modifier = Modifier
@@ -361,7 +366,17 @@ fun ServiceCard(serviceItem: ServicesDataModel) {
                 color = colorResource(id = R.color.yellow_new),
                 shape = RoundedCornerShape(8.dp)
             )
-            .clickable { },
+            .clickable {
+                       when(serviceItem.enumId){
+                           ServiceEnum.REQUEST_ACCESS_CARD.type -> { navController.navigate(Screen.AcessCard.route)}
+
+                           ServiceEnum.HOUSE_KEEPING.type -> { }
+                           ServiceEnum.INVITE_GUEST.type -> { }
+                           ServiceEnum.MAINTENANCE.type -> { }
+                           ServiceEnum.NOC.type -> { }
+                           ServiceEnum.PAYMENT.type -> { }
+                       }
+            },
         contentAlignment = Alignment.Center
     ) {
         Column(

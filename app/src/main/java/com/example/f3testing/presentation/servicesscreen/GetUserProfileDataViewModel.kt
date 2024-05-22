@@ -8,6 +8,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.f3testing.domain.model.ProfileResponseModel
+import com.example.f3testing.domain.model.ServicesDataModel
 import com.example.f3testing.domain.repository.F3Repository
 import com.example.f3testing.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,7 +28,10 @@ class GetUserProfileDataViewModel @Inject constructor(private val userProfileRep
         "test" ,
        "test"
     )
-    var userData by mutableStateOf<ProfileResponseModel>(date)
+
+
+    var userData by mutableStateOf<ProfileResponseModel?>(null)
+
 
 
     init {
